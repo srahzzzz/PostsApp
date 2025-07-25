@@ -44,7 +44,7 @@ The app is built using **Jetpack Compose** and follows a clean **MVVM architectu
 ![Home Screen](screenshots/HomeScreen.png)
 
 ### ⏳ Loading State
-![Loading](screenshots/lLoadingScreen.png)
+![Loading](screenshots/LoadingScreen.png)
 
 
 
