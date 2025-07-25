@@ -1,4 +1,4 @@
-package com.example.postsapp
+package com.example.postsapp.network
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,19 +12,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.postsapp.ui.theme.PostsAppTheme
+import com.example.postsapp.network.RetrofitClient
+import com.example.postsapp.repository.MessageRepository
+import com.example.postsapp.viewmodel.MainViewModel
+import com.example.postsapp.ui.theme.MainScreen
+import com.example.postsapp.data.ApiService
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        // Manual DI setup
+        val api = RetrofitClient.apiService
+        val repository = MessageRepository(api)
+        val viewModel = MainViewModel(repository)
+
         setContent {
             PostsAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                MainScreen(viewModel = viewModel)
             }
         }
     }
