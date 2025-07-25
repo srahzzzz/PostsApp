@@ -13,9 +13,8 @@ The app is built using **Jetpack Compose** and follows a clean **MVVM architectu
   - Loading state → shows progress bar
   - Success state → displays list of posts
   - Error state → shows retry button
-- ✅ Manual/ Hilt dependency injection (choose whichever you used)
+- ✅ Manual dependency injection 
 
----
 
 ## 🧱 Architecture Overview
 
@@ -25,7 +24,7 @@ The app is built using **Jetpack Compose** and follows a clean **MVVM architectu
 - **ViewModel** → Exposes `StateFlow<UiState<List<Post>>>`
 - **UI (Jetpack Compose)** → Observes and responds to state
 
-### Tech Stack
+## 🛠 Tech Stack
 - Kotlin
 - Jetpack Compose
 - MVVM
@@ -33,8 +32,19 @@ The app is built using **Jetpack Compose** and follows a clean **MVVM architectu
 - Coroutines
 - StateFlow / LiveData
 
-### How to Run
+## ▶ How to Run
 - Clone the repository
 `git clone https://github.com/your-username/bluesense-task.git`
 - Open in Android Studio
-- Click Run ▶ (select emulator or device)
+- Click Run (select emulator or device)
+
+## 📸 Screenshots
+
+### 🏠 Home Screen
+![Home Screen](screenshots/HomeScreen.png)
+
+### ⏳ Loading State
+![Loading](screenshots/lLoadingScreen.png)
+
+
+
